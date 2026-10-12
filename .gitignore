@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Markbook build output and local cache
+dist/
+.markbook/
+
+# Logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
