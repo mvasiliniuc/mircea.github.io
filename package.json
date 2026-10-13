@@ -1,0 +1,19 @@
+{
+  "name": "onepager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "markbook dev",
+    "build": "markbook build",
+    "preview": "markbook preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@doidor/markbook": "^0.6.0",
+    "@doidor/markbook-core": "^0.6.0"
+  }
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  {{ head }}
+</head>
+<body>
+  <div id="bg"></div>
+  <div id="main">
+    <article>
+      <header id="header">
+        <div class="header-top">
+          <div class="app-badge" aria-hidden="true"><i class="fas fa-mobile-screen-button"></i></div>
+          <h1>{{ title }}</h1>
+        </div>
+        <p class="role">{{ frontmatter.subtitle }}</p>
+      </header>
+
+      {{ content }}
+
+      <footer id="footer">
+        <span class="copyright">&copy; {{ title }}</span>
+        <span class="credit">Made easily with <a href="https://tudorpopa.com/markbook/" target="_blank" rel="noopener">Markbook</a>, a tool created by an <a href="https://github.com/doidor" target="_blank" rel="noopener">old friend</a></span>
+      </footer>
+    </article>
+  </div>
+  {{ bodyEnd }}
+</body>
+</html>
