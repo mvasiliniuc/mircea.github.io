@@ -13,6 +13,7 @@
 
 html {
   font-size: 16px;
+  background: var(--bg);
 }
 
 /* Light mode (default) */
@@ -56,9 +57,28 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Accent bar (replaces full-page bg) */
-#bg {
+/* Opaque cover for the iOS Safari notch/dynamic-island area. Safari's top
+   chrome is translucent and reveals whatever is scrolling underneath it;
+   requires viewport-fit=cover on the viewport meta for the env() to be
+   non-zero. Sits above the accent bar so it masks that strip with solid
+   page background instead of scrolled content bleeding through. */
+#safe-area-top {
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 101;
+  background: var(--bg);
+}
+
+/* Accent bar (replaces full-page bg).
+   position: sticky, not fixed - fixed elements visually detach and "float"
+   during momentum scrolling on iOS Safari as its toolbar collapses/expands
+   (a long-standing WebKit quirk); sticky stays in normal flow and avoids it,
+   while still pinning to the top like a fixed bar everywhere else. */
+#bg {
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
